@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-
+//need to assign pizzaData
 const pizzaData = [
   {
     name: "Focaccia",
@@ -56,7 +56,7 @@ function App() {
     </div>
   );
 }
-
+//need to assign style
 function Header() {
   const style = {};
 
@@ -71,14 +71,14 @@ function Menu() {
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, spinach, and ricotta cheese"
         photoName="pizzas/spinaci.jpg"
-        price="10"
+        price={10}
       />
 
       <Pizza
         name="Pizza Funghi"
-        ingredients="Tomoto, mushrooms"
-        price="12"
+        ingredients="Tomoto, mushrooms, Tomoto, mushrooms, Tomoto"
         photoName="pizzas/funghi.jpg"
+        price={12}
       />
     </main>
   );
@@ -88,10 +88,13 @@ function Pizza(props) {
   console.log(props);
 
   return (
-    <div>
+    <div className="pizza">
       <img src={props.photoName} alt={props.name} />
-      <h3>{props.name}</h3>
-      <p>{props.ingredients}</p>
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price + 3}</span>
+      </div>
     </div>
   );
 }
